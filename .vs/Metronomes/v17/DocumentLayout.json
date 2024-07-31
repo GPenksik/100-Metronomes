@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "D:\\unity_project\\Metronomes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|D:\\unity_project\\Metronomes\\assets\\scripts\\asynchrony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\asynchrony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|d:\\unity_project\\metronomes\\assets\\scripts\\clapdetection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\clapdetection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|d:\\unity_project\\metronomes\\assets\\scripts\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|D:\\unity_project\\Metronomes\\assets\\scripts\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|d:\\unity_project\\metronomes\\assets\\scripts\\timemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|D:\\unity_project\\Metronomes\\assets\\scripts\\animationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|D:\\unity_project\\Metronomes\\assets\\scripts\\clapdetection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\clapdetection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|d:\\unity_project\\metronomes\\assets\\scripts\\asynchrony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\asynchrony.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|D:\\unity_project\\Metronomes\\assets\\scripts\\timemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\timemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|d:\\unity_project\\metronomes\\assets\\scripts\\randomanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|D:\\unity_project\\Metronomes\\assets\\scripts\\randomanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\randomanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|d:\\unity_project\\metronomes\\assets\\scripts\\animationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10E543A3-CF88-50FF-9704-117F1415A90E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\animationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 275,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Asynchrony.cs",
               "DocumentMoniker": "D:\\unity_project\\Metronomes\\Assets\\scripts\\Asynchrony.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Asynchrony.cs",
               "ToolTip": "D:\\unity_project\\Metronomes\\Assets\\scripts\\Asynchrony.cs",
               "RelativeToolTip": "Assets\\scripts\\Asynchrony.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAYwB0AAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-14T14:13:41.118Z",
               "IsPinned": true,
@@ -52,20 +52,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "RandomAnimation.cs",
               "DocumentMoniker": "D:\\unity_project\\Metronomes\\Assets\\scripts\\RandomAnimation.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\RandomAnimation.cs",
               "ToolTip": "D:\\unity_project\\Metronomes\\Assets\\scripts\\RandomAnimation.cs",
               "RelativeToolTip": "Assets\\scripts\\RandomAnimation.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAIwBwAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T15:58:12.577Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-30T15:58:12.577Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Timemanager.cs",
               "DocumentMoniker": "D:\\unity_project\\Metronomes\\Assets\\scripts\\Timemanager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Timemanager.cs",
@@ -78,39 +77,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Animationmanager.cs",
               "DocumentMoniker": "D:\\unity_project\\Metronomes\\Assets\\scripts\\Animationmanager.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Animationmanager.cs",
               "ToolTip": "D:\\unity_project\\Metronomes\\Assets\\scripts\\Animationmanager.cs",
               "RelativeToolTip": "Assets\\scripts\\Animationmanager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-30T14:43:55.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Clapdetection.cs",
               "DocumentMoniker": "D:\\unity_project\\Metronomes\\Assets\\scripts\\Clapdetection.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Clapdetection.cs",
               "ToolTip": "D:\\unity_project\\Metronomes\\Assets\\scripts\\Clapdetection.cs",
               "RelativeToolTip": "Assets\\scripts\\Clapdetection.cs",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAuwGYAAAAgAAAA",
+              "ViewState": "AQIAAG0AAAAAAAAAAADwv3QAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-30T14:43:32.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "AnimationController.cs",
               "DocumentMoniker": "D:\\unity_project\\Metronomes\\Assets\\scripts\\AnimationController.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\AnimationController.cs",
               "ToolTip": "D:\\unity_project\\Metronomes\\Assets\\scripts\\AnimationController.cs",
               "RelativeToolTip": "Assets\\scripts\\AnimationController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAIwBwAAAAJAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAADwv1IAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-25T18:39:53.907Z",
               "EditorCaption": ""
