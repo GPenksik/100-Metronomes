@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class activate : MonoBehaviour
+public class Activate : MonoBehaviour
 {
     private Animator animator;
     public bool Switch = false;
@@ -27,7 +27,7 @@ public class activate : MonoBehaviour
             animator.SetBool("Switch", Switch);
 
             // 记录当前时间到 TimeManager
-            TimeManager.Instance.AddTimestamp(Time.time);
+            UserTimeManager.Instance.AddTimestamp(Time.time);
 
         }
     }
