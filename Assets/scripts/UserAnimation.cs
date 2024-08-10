@@ -39,7 +39,7 @@ public class UserAnimation : MonoBehaviour
                 //time_error = targetDuration - originalDuration;
                 //time_error = targetDuration - originalDuration + time_error;
                 //targetDuration = time_error * Alpha + originalDuration;
-                Debug.Log("target Duration: " + targetDuration);
+                //Debug.Log("target Duration: " + targetDuration);
                 UpdateAnimationSpeed();
             }
 
@@ -60,20 +60,7 @@ public class UserAnimation : MonoBehaviour
         if (animator != null)
         {
             animator.speed = speed;
-            Debug.Log("Animation speed set to: " + speed);
-        }
-    }
-
-    public float GetAnimationSpeedSign()
-    {
-        //return animator != null ? animator.speed : 0f;
-        if (animator != null)
-        {
-            return animator.speed >= 0 ? 1 : -1;
-        }
-        else
-        {
-            return 0; // Animator 组件不存在时返回0，表示没有速度
+            //Debug.Log("Animation speed set to: " + speed);
         }
     }
 
