@@ -7,7 +7,12 @@ public class EnsembleModel : MonoBehaviour
     public List<Player> players = new List<Player>();
     public List<List<float>> alphaParams = new List<List<float>>();
     public List<List<float>> betaParams = new List<List<float>>();
-    public float originalAnimationDuration = 0.5f; // 示例值，需要根据实际情况设置
+    public float alpha_self = 0.0f;
+    public float alpha_user = 0.1f;
+    public float alpha_auto = 0.01f;
+    public float beta_self = 0.0f;
+    public float beta_user = 0.01f;
+    public float beta_auto = 0.01f;
     private bool initialTempoSet = false;
     private int scoreCounter = 0;
 
@@ -26,20 +31,20 @@ public class EnsembleModel : MonoBehaviour
 
     private void Start()
     {
-        // 清空 players 列表
+        // Clear the players list
         players.Clear();
         alphaParams.Clear();
         betaParams.Clear();
         scoreCounter = 0;
 
-        // 查找场景中的所有 Player 对象并添加到列表中
+        // Find all Player objects in the scene and add them to the list
         Player[] foundPlayers = FindObjectsOfType<Player>();
         players.AddRange(foundPlayers);
 
-        // 初始化 alphaParams 和 betaParams 列表
+        // Initialize alphaParams and betaParams lists
         for (int i = 0; i < players.Count; i++)
         {
-            players[i].Index = i; // 设置每个玩家的索引
+            players[i].Index = i; // Set the index for each player
             alphaParams.Add(new List<float>());
             betaParams.Add(new List<float>());
 
@@ -47,21 +52,21 @@ public class EnsembleModel : MonoBehaviour
             {
                 if (i == j)
                 {
-                    // 自己对自己的 alpha 和 beta 为 0
-                    alphaParams[i].Add(0.0f);
-                    betaParams[i].Add(0.0f);
+                    // Set alpha and beta to 0 for the same player
+                    alphaParams[i].Add(alpha_self);
+                    betaParams[i].Add(beta_self);
                 }
                 else if (players[i] is UserPlayer || players[j] is UserPlayer)
                 {
-                    // 只要 i 或 j 是 UserPlayer，设置较大的 alpha 值
-                    alphaParams[i].Add(0.5f);  // 假设较大值
-                    betaParams[i].Add(0.01f);  // 假设 beta 统一为 0.01
+                    // If either i or j is a UserPlayer, set a higher alpha value
+                    alphaParams[i].Add(alpha_user);
+                    betaParams[i].Add(beta_user);
                 }
                 else
                 {
-                    // 其他情况下，设置较小的 alpha 值
-                    alphaParams[i].Add(0.01f); // 假设较小值
-                    betaParams[i].Add(0.01f);  // 假设 beta 统一为 0.01
+                    // In other cases, set a lower alpha value
+                    alphaParams[i].Add(alpha_auto);
+                    betaParams[i].Add(beta_auto);
                 }
             }
         }
@@ -78,7 +83,7 @@ public class EnsembleModel : MonoBehaviour
         {
             foreach (var player in players)
             {
-                player.onsetInterval = originalAnimationDuration;
+                player.onsetInterval = SetoriginalAnimationDuration();
             }
 
             initialTempoSet = true;
@@ -101,7 +106,7 @@ public class EnsembleModel : MonoBehaviour
     {
         foreach (var player in players)
         {
-            player.RecalculateOnsetInterval(originalAnimationDuration, players, alphaParams[player.Index], betaParams[player.Index]);
+            player.RecalculateOnsetInterval(SetoriginalAnimationDuration(), players, alphaParams[player.Index], betaParams[player.Index]);
         }
     }
 
@@ -124,5 +129,14 @@ public class EnsembleModel : MonoBehaviour
             ++scoreCounter;
             Debug.Log("scorecount" + scoreCounter);
         }
+    }
+
+    public float SetoriginalAnimationDuration()
+    {
+        float bpm = PlayerPrefs.GetFloat("BPM", 120f);
+        float originalAnimationDuration = (120f / bpm) * 0.5f;
+        Debug.Log("originalAnimationDuration"+ originalAnimationDuration);
+        return originalAnimationDuration;
+
     }
 }

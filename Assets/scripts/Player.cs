@@ -149,12 +149,12 @@ public abstract class Player : MonoBehaviour
         return totalInterval / 4f; // 5 timestamps means 4 intervals
     }
 
-    public float GetTimeDifferenceBetweenLastTwoTimestamps()
+    public float GetlastonsetInterval()
     {
         if (latestOnsetTimes.Count < 2)
         {
             Debug.LogWarning("Not enough timestamps to calculate the time difference.");
-            return 0f;
+            return 0.5f;
         }
 
         float lastTimestamp = latestOnsetTimes[latestOnsetTimes.Count - 1];

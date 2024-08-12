@@ -79,7 +79,7 @@ public class UserTimeManager : MonoBehaviour
         return totalInterval / 4f; // 5 timestamps means 4 intervals
     }
 
-    public float GetTimeDifferenceBetweenLastTwoTimestamps()
+    public float GetlastonsetInterval()
     {
         if (Timestamps.Count < 3)
         {

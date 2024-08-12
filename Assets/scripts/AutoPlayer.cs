@@ -39,32 +39,35 @@ public class AutoPlayer : Player
     {
         float alphaSum = 0f;
         float betaSum = 0f;
+        float Animationlength = 0.5f;
 
         for (int i = 0; i < players.Count; ++i)
         {
             float async = GetLatestOnsetTime() - players[i].GetLatestOnsetTime();
             alphaSum += alphas[i] * async;
-            Debug.Log("alphaSum: " + alphaSum);
+            //Debug.Log("alphaSum: " + alphaSum);
             betaSum += betas[i] * async;
         }
 
-        //Debug.Log("alphaSum: " + alphaSum);
+        Debug.Log("alphaSum: " + alphaSum);
         // 更新时间保持器的平均值
         timeKeeperMean -= betaSum;
 
         // 生成噪声
         float hNoise = GenerateHNoise();
-        Debug.Log("Noise" + hNoise);
+        //Debug.Log("Noise" + hNoise);
+
 
         // 计算下一个开始时间间隔
         onsetInterval = originalAnimationDuration - alphaSum + 0.1f*hNoise;
+        Debug.Log("originalAnimationDuration: " + originalAnimationDuration);
         Debug.Log("onsetInterval: " + onsetInterval);
 
         // 存储计算得到的动画速度
 
-        float calculatedSpeed = originalAnimationDuration / onsetInterval;
-        Debug.Log("originalAnimationDuration  " + originalAnimationDuration);
-        Debug.Log("calculatedSpeed: " + calculatedSpeed);
+        float calculatedSpeed = Animationlength / onsetInterval;
+        //Debug.Log("originalAnimationDuration  " + originalAnimationDuration);
+        //Debug.Log("calculatedSpeed: " + calculatedSpeed);
         animationSpeeds.Add(calculatedSpeed);
     }
 
@@ -80,7 +83,7 @@ public class AutoPlayer : Player
         if (animationSpeeds.Count > 0)
         {
             dialAnimator.speed = animationSpeeds[animationSpeeds.Count - 1];
-            Debug.Log("Animation speed set to: " + animationSpeeds[animationSpeeds.Count - 1]);
+            //Debug.Log("Animation speed set to: " + animationSpeeds[animationSpeeds.Count - 1]);
         }
         else
         {

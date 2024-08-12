@@ -35,7 +35,7 @@ public class UserAnimation : MonoBehaviour
             SetAnimationSpeedsign();
             if (UserTimeManager.Instance.GetsatampNum() > 2)
             {
-                targetDuration = UserTimeManager.Instance.GetTimeDifferenceBetweenLastTwoTimestamps();
+                targetDuration = UserTimeManager.Instance.GetlastonsetInterval();
                 //time_error = targetDuration - originalDuration;
                 //time_error = targetDuration - originalDuration + time_error;
                 //targetDuration = time_error * Alpha + originalDuration;

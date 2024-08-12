@@ -53,7 +53,8 @@ public class UserPlayer : Player
         else
         {
             // 没有其他玩家时，使用最近播放的间隔
-            onsetInterval = originalAnimationDuration;
+            onsetInterval = GetlastonsetInterval();
+;
         }
     }
 }
