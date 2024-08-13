@@ -27,8 +27,7 @@ public class UserAnimation : MonoBehaviour
 
     void ChangeAnimationSpeed()
     {
-        // 检测空格键按下
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (InputChecker.IsTouchBegan())
         {
             // 记录空格键按下的时间戳
             UserTimeManager.Instance.AddTimestamp(Time.time);

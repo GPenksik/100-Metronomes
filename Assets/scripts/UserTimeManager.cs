@@ -62,21 +62,10 @@ public class UserTimeManager : MonoBehaviour
         }
     }
 
-    public float GetAverageIntervalOfLastFiveSpaceTimestamps()
+    public bool GetFiveTimestamps()
     {
-        if (Timestamps.Count < 5)
-        {
-            Debug.LogWarning("Not enough space key timestamps to calculate the average interval.");
-            return 0f;
-        }
 
-        float totalInterval = 0f;
-        for (int i = Timestamps.Count - 5; i < Timestamps.Count - 1; i++)
-        {
-            totalInterval += Timestamps[i + 1] - Timestamps[i];
-        }
-
-        return totalInterval / 4f; // 5 timestamps means 4 intervals
+        return (Timestamps.Count > 5); 
     }
 
     public float GetlastonsetInterval()
@@ -96,5 +85,10 @@ public class UserTimeManager : MonoBehaviour
         //Debug.Log("Timestamps: " + Timestamps[0]);
 
         return lastTimestamp - secondLastTimestamp;
+    }
+    public void clearTimestamps()
+    {
+
+        Timestamps.Clear();
     }
 }

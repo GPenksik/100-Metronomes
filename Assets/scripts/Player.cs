@@ -25,6 +25,8 @@ public abstract class Player : MonoBehaviour
 
     protected virtual void Start()
     {
+        latestOnsetTimes.Clear();
+        notePlayed = false;
         dialAnimator = GetComponent<Animator>();
         if (dialAnimator == null)
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -7,7 +8,6 @@ public class StartMenu : MonoBehaviour
     public Button button60;
     public Button button90;
     public Button button120;
-    public Button startButton;
 
     private float bpm = 120f; // 默认 BPM 为120
 
@@ -18,10 +18,16 @@ public class StartMenu : MonoBehaviour
         button90.onClick.AddListener(() => OnBpmButtonClicked(button90, 90f));
         button120.onClick.AddListener(() => OnBpmButtonClicked(button120, 120f));
 
-        startButton.onClick.AddListener(OnStartButtonClicked);
-
+ 
         // 默认选择 120 BPM 的按钮
         OnBpmButtonClicked(button120, 120f);
+    }
+    void Update()
+    {
+        if (UserTimeManager.Instance.GetFiveTimestamps())
+        {
+            SceneManager.LoadScene("Ensemble");
+        }
     }
 
     void OnBpmButtonClicked(Button button, float selectedBpm)
@@ -32,11 +38,6 @@ public class StartMenu : MonoBehaviour
         PlayerPrefs.SetFloat("BPM", bpm);
         PlayerPrefs.Save();
 
-    }
 
-    void OnStartButtonClicked()
-    {
-        // 加载 Ensemble 场景
-        SceneManager.LoadScene("Ensemble");
     }
 }

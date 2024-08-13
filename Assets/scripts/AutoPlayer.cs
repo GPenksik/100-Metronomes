@@ -8,6 +8,7 @@ public class AutoPlayer : Player
 
     protected override void Start()
     {
+        animationSpeeds.Clear();
         base.Start(); // 调用基类的 Start 方法
         notePlayed = false;
     }
@@ -49,7 +50,7 @@ public class AutoPlayer : Player
             betaSum += betas[i] * async;
         }
 
-        Debug.Log("alphaSum: " + alphaSum);
+        //Debug.Log("alphaSum: " + alphaSum);
         // 更新时间保持器的平均值
         timeKeeperMean -= betaSum;
 
@@ -60,8 +61,8 @@ public class AutoPlayer : Player
 
         // 计算下一个开始时间间隔
         onsetInterval = originalAnimationDuration - alphaSum + 0.1f*hNoise;
-        Debug.Log("originalAnimationDuration: " + originalAnimationDuration);
-        Debug.Log("onsetInterval: " + onsetInterval);
+        //Debug.Log("originalAnimationDuration: " + originalAnimationDuration);
+        //Debug.Log("onsetInterval: " + onsetInterval);
 
         // 存储计算得到的动画速度
 

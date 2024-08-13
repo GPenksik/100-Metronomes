@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class UserPlayer : Player
 {
-    public float currentOnsetTime; // 当前的开始时间
 
     protected override void Start()
     {
@@ -13,7 +12,7 @@ public class UserPlayer : Player
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (InputChecker.IsTouchBegan())
         {
             float currentTime = Time.time;
             AddTimestamp(currentTime);
@@ -48,13 +47,16 @@ public class UserPlayer : Player
         {
             meanOnset /= nOtherPlayers;
             meanInterval /= nOtherPlayers;
-            onsetInterval = meanOnset - currentOnsetTime + 1.5f * meanInterval;
         }
         else
         {
-            // 没有其他玩家时，使用最近播放的间隔
-            onsetInterval = GetlastonsetInterval();
-;
+            onsetInterval = meanOnset - GetLatestOnsetTime() + 1.5f * meanInterval;
         }
+
+        // 将最新值存储在PlayerPrefs中
+        PlayerPrefs.SetFloat("meanOnset", meanOnset);
+        PlayerPrefs.SetFloat("meanInterval", meanInterval);
+        PlayerPrefs.SetFloat("onsetInterval", onsetInterval);
+        PlayerPrefs.Save(); // 保存更改
     }
 }
