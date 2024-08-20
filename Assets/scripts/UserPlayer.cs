@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class UserPlayer : Player
 {
+    // 用于存储多个 meanOnset 和 meanInterval 的列表
+    private List<float> meanOnsetList = new List<float>();
+    private List<float> meanIntervalList = new List<float>();
 
     protected override void Start()
     {
@@ -53,10 +56,25 @@ public class UserPlayer : Player
             onsetInterval = meanOnset - GetLatestOnsetTime() + 1.5f * meanInterval;
         }
 
-        // 将最新值存储在PlayerPrefs中
+        // 将最新的 meanOnset 和 meanInterval 添加到列表中
+        meanOnsetList.Add(meanOnset);
+        meanIntervalList.Add(meanInterval);
+
+        // 如果需要，将最新值存储在PlayerPrefs中（例如用于保存最终计算结果）
         PlayerPrefs.SetFloat("meanOnset", meanOnset);
         PlayerPrefs.SetFloat("meanInterval", meanInterval);
         PlayerPrefs.SetFloat("onsetInterval", onsetInterval);
         PlayerPrefs.Save(); // 保存更改
+    }
+
+    // 如果需要，添加方法来访问 meanOnsetList 和 meanIntervalList
+    public List<float> GetMeanOnsetList()
+    {
+        return meanOnsetList;
+    }
+
+    public List<float> GetMeanIntervalList()
+    {
+        return meanIntervalList;
     }
 }

@@ -12,6 +12,7 @@ public class UserAnimation : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
         if (animator == null)
         {
             Debug.LogError("Animator component not found on" + gameObject.name);
@@ -68,5 +69,14 @@ public class UserAnimation : MonoBehaviour
         IsReversed = !IsReversed;
         animator.SetBool("IsReversed", IsReversed);
     }
+
+    public void ResetToDefaultState()
+    {
+        IsReversed = false;
+
+        // 使用淡入淡出的方式回到默认状态
+        animator.SetTrigger("Reset");
+    }
+
 }
 

@@ -12,8 +12,6 @@ public class EnsembleModel : MonoBehaviour
     public List<List<float>> betaParams = new List<List<float>>();
 
     public float alpha_self = 0.0f;
-    public float alpha_user = 0.01f;
-    public float alpha_auto = 0.01f;
     public float beta_self = 0.0f;
     public float beta_user = 0.01f;
     public float beta_auto = 0.01f;
@@ -76,8 +74,18 @@ public class EnsembleModel : MonoBehaviour
     {
         foreach (var player in players)
         {
+            //float AnimationDuration = player.GetlastonsetInterval();
             player.RecalculateOnsetInterval(SetoriginalAnimationDuration(), players, alphaParams[player.Index], betaParams[player.Index]);
         }
+    }
+
+    public float SetoriginalAnimationDuration()
+    {
+        float bpm = PlayerPrefs.GetFloat("BPM", 120f);
+        float originalAnimationDuration = (120f / bpm) * 0.5f;
+        //Debug.Log("originalAnimationDuration"+ originalAnimationDuration);
+        return originalAnimationDuration;
+
     }
 
     public void ClearOnsetsAvailable()
@@ -85,7 +93,7 @@ public class EnsembleModel : MonoBehaviour
         foreach (var player in players)
         {
             player.ResetNote();
-            Debug.Log("Note reset");
+            //Debug.Log("Note reset");
         }
     }
 
@@ -97,19 +105,12 @@ public class EnsembleModel : MonoBehaviour
             CalculateNewIntervals();
             ClearOnsetsAvailable();
             ++scoreCounter;
-            Debug.Log("scorecount" + scoreCounter);
-            // 更新 ScoreUIController 中的分数显示
             scoreUI.UpdateScore(scoreCounter);
+#if UNITY_EDITOR
+            // 更新 ScoreUIController 中的分数显示
+            Debug.Log("scorecount" + scoreCounter);          
+#endif
         }
-    }
-
-    public float SetoriginalAnimationDuration()
-    {
-        float bpm = PlayerPrefs.GetFloat("BPM", 120f);
-        float originalAnimationDuration = (120f / bpm) * 0.5f;
-        //Debug.Log("originalAnimationDuration"+ originalAnimationDuration);
-        return originalAnimationDuration;
-
     }
 
     public void Findplayer()
@@ -129,6 +130,8 @@ public class EnsembleModel : MonoBehaviour
 
     public void InitalParam()
     {
+        float alpha_user = PlayerPrefs.GetFloat("alphaUser", 0.03f);
+        float alpha_auto = PlayerPrefs.GetFloat("alphaAuto", 0.03f);
         // Initialize alphaParams and betaParams lists
         for (int i = 0; i < players.Count; i++)
         {

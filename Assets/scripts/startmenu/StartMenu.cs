@@ -5,39 +5,25 @@ using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
-    public Button button60;
-    public Button button90;
-    public Button button120;
-
-    private float bpm = 120f; // 默认 BPM 为120
 
     void Start()
     {
-        // 设置每个按钮的点击事件
-        button60.onClick.AddListener(() => OnBpmButtonClicked(button60, 60f));
-        button90.onClick.AddListener(() => OnBpmButtonClicked(button90, 90f));
-        button120.onClick.AddListener(() => OnBpmButtonClicked(button120, 120f));
+        UserTimeManager.Instance.clearTimestamps();
+        Time.timeScale = 1f; // 恢复游戏时间
 
- 
-        // 默认选择 120 BPM 的按钮
-        OnBpmButtonClicked(button120, 120f);
     }
     void Update()
     {
         if (UserTimeManager.Instance.GetFiveTimestamps())
         {
+            // 记录当前时间为 starttime（使用 Time.time）
+            float StartTime = Time.time;
+            //Debug.Log("StartTime" + StartTime);
+            PlayerPrefs.SetFloat("StartTime", StartTime);
+            PlayerPrefs.Save();
+
             SceneManager.LoadScene("Ensemble");
         }
     }
 
-    void OnBpmButtonClicked(Button button, float selectedBpm)
-    {
-        bpm = selectedBpm; // 更新 BPM 值
-
-        // 将 BPM 值存储在 PlayerPrefs 中，实时更新
-        PlayerPrefs.SetFloat("BPM", bpm);
-        PlayerPrefs.Save();
-
-
-    }
 }

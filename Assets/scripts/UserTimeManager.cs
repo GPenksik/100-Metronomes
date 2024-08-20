@@ -37,7 +37,7 @@ public class UserTimeManager : MonoBehaviour
             }
         }
 
-        Timestamps.Add(time);
+        Timestamps.Add(time);                 
     }
 
     public List<float> GetClapTimestamps()

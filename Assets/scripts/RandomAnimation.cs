@@ -5,9 +5,9 @@ using UnityEngine;
 public class RandomAnimationStateBehaviour : StateMachineBehaviour
 {
     public float minSpeed = 0.5f;
-    public float maxSpeed = 2.0f;
+    public float maxSpeed = 1.250f;
     public float minStartTime = 0f;
-    public float maxStartTime = 1f;
+    public float maxStartTime = 0.5f;
 
     private bool initialized = false;
 

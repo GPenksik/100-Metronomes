@@ -35,7 +35,7 @@ public class AnimationAudioPlayer : MonoBehaviour
         }
 
         // 在动画归一化时间达到0.8时播放音频
-        if (currentNormalizedTime >= 0.8f && !audioPlayed)
+        if (currentNormalizedTime >= 0.9f && !audioPlayed)
         {
             PlayAudio();
             audioPlayed = true; // 确保音频只播放一次

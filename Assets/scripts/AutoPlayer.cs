@@ -1,21 +1,32 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class AutoPlayer : Player
 {
+    public float minSpeed = 0.25f;
+    public float maxSpeed = 1.25f;
+
     public bool IsReversed = false;
     private List<float> animationSpeeds = new List<float>(); // 用于存储动画速度的列表
-
     protected override void Start()
     {
         animationSpeeds.Clear();
         base.Start(); // 调用基类的 Start 方法
         notePlayed = false;
+        RandomizeAllAnimationSpeeds();
     }
 
     void Update()
     {
         AnimationEnd();
+    }
+
+
+    void RandomizeAllAnimationSpeeds()
+    {
+        float speed = dialAnimator.GetCurrentAnimatorStateInfo(0).speed;
+        animationSpeeds.Add(speed); // 记录下原始速度
     }
 
     private void AnimationEnd()
@@ -45,12 +56,16 @@ public class AutoPlayer : Player
         for (int i = 0; i < players.Count; ++i)
         {
             float async = GetLatestOnsetTime() - players[i].GetLatestOnsetTime();
+            if (async < -0.5 || async > 0.5)
+            { 
+                async = 0;
+            }
             alphaSum += alphas[i] * async;
             //Debug.Log("alphaSum: " + alphaSum);
             betaSum += betas[i] * async;
         }
-
         //Debug.Log("alphaSum: " + alphaSum);
+
         // 更新时间保持器的平均值
         timeKeeperMean -= betaSum;
 
@@ -65,11 +80,13 @@ public class AutoPlayer : Player
         //Debug.Log("onsetInterval: " + onsetInterval);
 
         // 存储计算得到的动画速度
+        if (onsetInterval > 0.1)
+        {
+            float calculatedSpeed = Animationlength / onsetInterval;
+            //Debug.Log("calculatedSpeed: " + calculatedSpeed);
+            animationSpeeds.Add(calculatedSpeed);
+        }
 
-        float calculatedSpeed = Animationlength / onsetInterval;
-        //Debug.Log("originalAnimationDuration  " + originalAnimationDuration);
-        //Debug.Log("calculatedSpeed: " + calculatedSpeed);
-        animationSpeeds.Add(calculatedSpeed);
     }
 
     public void SetAnimationSpeedsign()
@@ -81,14 +98,14 @@ public class AutoPlayer : Player
     // 应用存储的速度
     public void ApplyStoredSpeed()
     {
-        if (animationSpeeds.Count > 0)
+        if (animationSpeeds.Count > 1)
         {
             dialAnimator.speed = animationSpeeds[animationSpeeds.Count - 1];
             //Debug.Log("Animation speed set to: " + animationSpeeds[animationSpeeds.Count - 1]);
         }
         else
         {
-            dialAnimator.speed = 1f;
+            dialAnimator.speed = animationSpeeds[0];
         }
     }
 }

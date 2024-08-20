@@ -55,7 +55,7 @@ public abstract class Player : MonoBehaviour
     public void ResetNote()
     {
         notePlayed = false;
-        Debug.Log("noterested"+notePlayed);
+        //Debug.Log("noterested"+notePlayed);
     }
 
     // Éú³ÉËæ»úÔëÉù
@@ -132,7 +132,7 @@ public abstract class Player : MonoBehaviour
     {
         return latestOnsetTimes.Count;
     }
-
+     
 
     public float GetAverageIntervalOfLastFiveSpaceTimestamps()
     {
@@ -156,7 +156,7 @@ public abstract class Player : MonoBehaviour
         if (latestOnsetTimes.Count < 2)
         {
             Debug.LogWarning("Not enough timestamps to calculate the time difference.");
-            return 0.5f;
+            return EnsembleModel.Instance.SetoriginalAnimationDuration();
         }
 
         float lastTimestamp = latestOnsetTimes[latestOnsetTimes.Count - 1];
@@ -164,4 +164,5 @@ public abstract class Player : MonoBehaviour
 
         return lastTimestamp - secondLastTimestamp;
     }
+
 }
