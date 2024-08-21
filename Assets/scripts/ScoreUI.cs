@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class ScoreUI : MonoBehaviour
     public Text scoreText; // 引用 Unity 的 Text 组件
     public Text BPMText;
     public Text AlphaText;
+    public Text FinishText;
 
     private int scoreCounter = 0;
 
@@ -23,12 +25,20 @@ public class ScoreUI : MonoBehaviour
             UpdateBPMText(PlayerPrefs.GetFloat("BPM", 60f));
             UpdateAlphaText(PlayerPrefs.GetString("Alpha", "High"));
         }
+        if (FinishText != null)
+        {
+            FinishText.enabled = false;
+        }
     }
 
     public void UpdateScore(int newScore)
     {
         scoreCounter = newScore;
         UpdateScoreText(scoreCounter);
+        if (scoreCounter > 7)
+        {
+            FinishText.enabled = true;
+        }
     }
 
     private void UpdateScoreText(int Counter)

@@ -62,10 +62,15 @@ public class GuideManager : MonoBehaviour
     // 你可以在 Inspector 中通过调用此函数手动重新加载对象
     public void ReloadChildObject()
     {
-        if (PlayerPrefs.GetInt("AudioGudance", 1) == 1)
+        if (PlayerPrefs.GetInt("AudioGudance", 1) == 1){
             needaudio = true;
-        if (PlayerPrefs.GetInt("VisualGudance", 1) == 1)
+        }
+        else { needaudio = false; }
+
+        if (PlayerPrefs.GetInt("VisualGudance", 1) == 1) {
             needvisual = true;
+        }
+        else { needvisual = false; }
         LoadChildObject();
     }
 }

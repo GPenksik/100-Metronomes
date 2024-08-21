@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\UserAnimation.cs" />
     <Compile Include="Assets\Scripts\AutoPlayer.cs" />
     <Compile Include="Assets\Scripts\AnimationAudio.cs" />
+    <Compile Include="Assets\Scripts\startmenu\AudioOnly.cs" />
     <Compile Include="Assets\Scripts\startmenu\UserManager.cs" />
     <Compile Include="Assets\Scripts\startmenu\StartMenu.cs" />
     <Compile Include="Assets\Scripts\startmenu\GuideSound.cs" />

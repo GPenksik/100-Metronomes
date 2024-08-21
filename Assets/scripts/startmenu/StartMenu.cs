@@ -14,11 +14,10 @@ public class StartMenu : MonoBehaviour
     }
     void Update()
     {
-        if (UserTimeManager.Instance.GetFiveTimestamps())
+        if (UserTimeManager.Instance.GetTenTimestamps())
         {
             // 记录当前时间为 starttime（使用 Time.time）
             float StartTime = Time.time;
-            //Debug.Log("StartTime" + StartTime);
             PlayerPrefs.SetFloat("StartTime", StartTime);
             PlayerPrefs.Save();
 

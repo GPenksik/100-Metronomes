@@ -28,9 +28,9 @@ public class Setting : MonoBehaviour
         button60.onClick.AddListener(() => OnBpmButtonClicked(button60, 60f));
         button90.onClick.AddListener(() => OnBpmButtonClicked(button90, 90f));
         button120.onClick.AddListener(() => OnBpmButtonClicked(button120, 120f));
-        buttonHigh.onClick.AddListener(() => OnAlphaButtonClicked(buttonHigh, 0.1f, 0.01f,"High"));
-        buttonMedium.onClick.AddListener(() => OnAlphaButtonClicked(buttonMedium, 0.02f, 0.025f,"Medium"));
-        buttonLow.onClick.AddListener(() => OnAlphaButtonClicked(buttonLow, 0.01f, 0.03f,"Low"));
+        buttonHigh.onClick.AddListener(() => OnAlphaButtonClicked(buttonHigh, 0.1f, 0.003f,"High"));
+        buttonMedium.onClick.AddListener(() => OnAlphaButtonClicked(buttonMedium, 0.05f, 0.007f,"Medium"));
+        buttonLow.onClick.AddListener(() => OnAlphaButtonClicked(buttonLow, 0.01f, 0.009f,"Low"));
         noguidance.onClick.AddListener(() => OnguidanceButtonClicked(noguidance, 0, 0));
         audioguidance.onClick.AddListener(() => OnguidanceButtonClicked(audioguidance, 1, 0));
         visualguidance.onClick.AddListener(() => OnguidanceButtonClicked(visualguidance, 0, 1));
@@ -40,7 +40,7 @@ public class Setting : MonoBehaviour
 
         // 默认选择 120 BPM 和 Medium Alpha 的按钮
         OnBpmButtonClicked(button60, 60f);
-        OnAlphaButtonClicked(buttonHigh, 0.1f, 0.01f, "High");
+        OnAlphaButtonClicked(buttonHigh, 0.1f, 0.003f, "High");
         OnguidanceButtonClicked(bothguidance, 1, 1);
     }
 

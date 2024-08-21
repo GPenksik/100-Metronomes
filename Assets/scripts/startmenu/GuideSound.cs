@@ -7,28 +7,28 @@ public class GuideSound : MonoBehaviour
     public AudioClip audioClips;
     private AudioSource audioSource;
     private Animator animator;
-    private bool audioPlayed = true; // 确保音频只播放一次
+    private bool audioPlayed = false; // 确保音频只播放一次
     private float previousNormalizedTime = 0f; // 记录上一次的 normalizedTime
-    public bool UseAudio;
+    public int UseAudio;
 
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.pitch = 2f;
         audioSource.clip = audioClips;
         animator = GetComponent<Animator>();
-        if (PlayerPrefs.GetInt("AudioGudance", 1) == 1)
-            UseAudio = true;
     }
 
     void Update()
     {
+        UseAudio = PlayerPrefs.GetInt("AudioGudance", 1);
         CheckUseAudio();
     }
 
     public void CheckUseAudio()
     {
 
-        if (UseAudio)
+        if (UseAudio==1)
         {
             Checkanimation();
         }
@@ -44,7 +44,7 @@ public class GuideSound : MonoBehaviour
             audioPlayed = false; // 重置 audioPlayed
         }
 
-        // 在动画归一化时间达到0.8时播放音频
+        // 在动画归一化时间达到0.9时播放音频
         if (currentNormalizedTime >= 0.9f && !audioPlayed)
         {
             PlayAudio();

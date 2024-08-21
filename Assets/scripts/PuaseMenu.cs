@@ -9,18 +9,14 @@ using UnityEngine.UI;
 public class PauseAndConfirmMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI; // 引用整个暂停/确认菜单的 UI
-    public Button confirmButton; // 引用确认按钮
+    public List<Player> players = new List<Player>();
     public Text Timeover;
+    public Text Confirm;
     private bool isPaused = false;
+    private int playernum = 0;
 
     void Start()
     {
-        // 绑定确认按钮的点击事件
-        if (confirmButton != null)
-        {
-            confirmButton.onClick.AddListener(OnConfirmButtonClicked);
-        }
-
         // 默认隐藏 UI
         if (pauseMenuUI != null)
         {
@@ -31,6 +27,10 @@ public class PauseAndConfirmMenu : MonoBehaviour
         if (Timeover != null)
         {
             Timeover.enabled = false;
+        }
+        if (Confirm != null)
+        {
+            Confirm.enabled = true;
         }
     }
 
@@ -45,11 +45,16 @@ public class PauseAndConfirmMenu : MonoBehaviour
             else
             {
                 Pause();
+                PlayerPrefs.SetInt("FinishTrial", 1);
+                PlayerPrefs.Save();
             }
         }
-        if(Time.time - PlayerPrefs.GetFloat("StartTime") > 120f)
+        if(Time.time - PlayerPrefs.GetFloat("StartTime") > 180f)
         {
             Pause();
+            PlayerPrefs.SetInt("FinishTrial", 0);
+            PlayerPrefs.Save();
+            Confirm.enabled = false;
             Timeover.enabled = true;
         }
     }
@@ -85,6 +90,13 @@ public class PauseAndConfirmMenu : MonoBehaviour
         LoadSettingsMenu(); // 确认后切换到 Start Menu 场景
     }
 
+    public void OngiveupButtonClicked()
+    {
+        PlayerPrefs.SetInt("FinishTrial", 0);
+        PlayerPrefs.Save();
+        OnConfirmButtonClicked();
+    }
+
     void SaveDataToFile()
     {
         try
@@ -112,6 +124,11 @@ public class PauseAndConfirmMenu : MonoBehaviour
                     if (key == "BPM" || key == "alphaUser" || key == "alphaAuto" || key == "StartTime")
                     {
                         float value = PlayerPrefs.GetFloat(key);
+                        data.AppendLine($"{key},{value.ToString("F4")}");
+                    }
+                    else if (key == "AudioGudance" || key == "VisualGudance" || key == "FinishTrial" || key == "scoreCounter")
+                    { 
+                        float value = PlayerPrefs.GetInt(key);
                         data.AppendLine($"{key},{value.ToString("F4")}");
                     }
                     else
@@ -150,6 +167,7 @@ public class PauseAndConfirmMenu : MonoBehaviour
                     data.Append("No mean onset values recorded.");
                 }
                 data.AppendLine(); // 在最后添加一个换行符
+
 
                 // 保存 meanIntervalList 在同一行
                 data.Append("Mean Interval List,");
@@ -193,6 +211,35 @@ public class PauseAndConfirmMenu : MonoBehaviour
             }
             data.AppendLine(); // 在最后添加一个换行符
 
+            AutoPlayer[] foundPlayers = FindObjectsOfType<AutoPlayer>();
+            players.AddRange(foundPlayers);
+
+            foreach (var player in players)
+            {
+
+                playernum++;
+                List<float> PlayerOnsetTimes = player.GetClapTimestamps();
+                data.Append("Player"+ playernum.ToString()+"OnsetTimes,");
+                if (PlayerOnsetTimes.Count > 0)
+                {
+                    for (int i = 0; i < PlayerOnsetTimes.Count; i++)
+                    {
+                        data.Append($"{PlayerOnsetTimes[i].ToString("F4")}");
+                        if (i < PlayerOnsetTimes.Count - 1)
+                        {
+                            data.Append(","); // 在每个值之间加逗号
+                        }
+                    }
+                }
+                else
+                {
+                    data.Append("No PlayerOnsetTimes recorded.");
+                }
+                data.AppendLine(); // 在最后添加一个换行符
+
+            }
+
+
             // 将数据写入新文件
             File.WriteAllText(filePath, data.ToString());
 
@@ -206,7 +253,7 @@ public class PauseAndConfirmMenu : MonoBehaviour
 
     string[] PlayerPrefsKeys()
     {
-        return new string[] { "BPM", "StartTime", "Alpha","alphaUser", "alphaAuto" };
+        return new string[] { "BPM", "StartTime", "scoreCounter", "Alpha","alphaUser", "alphaAuto", "AudioGudance", "VisualGudance", "FinishTrial" };
     }
 
 }

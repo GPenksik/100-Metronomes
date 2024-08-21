@@ -368,6 +368,7 @@
 "Assets/Scripts/ScoreUI.cs"
 "Assets/Scripts/Settings/Setting.cs"
 "Assets/Scripts/startmenu/Activate.cs"
+"Assets/Scripts/startmenu/AudioOnly.cs"
 "Assets/Scripts/startmenu/GuideManager.cs"
 "Assets/Scripts/startmenu/GuideSound.cs"
 "Assets/Scripts/startmenu/StartMenu.cs"

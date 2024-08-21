@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UserAnimation : MonoBehaviour
 {
+    public AudioClip audioClips;
+    private AudioSource audioSource;
     private Animator animator;
     public bool IsReversed = false;
     private float originalDuration = 0.5f; //原始时长（秒）
@@ -12,7 +14,8 @@ public class UserAnimation : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = audioClips;
         if (animator == null)
         {
             Debug.LogError("Animator component not found on" + gameObject.name);

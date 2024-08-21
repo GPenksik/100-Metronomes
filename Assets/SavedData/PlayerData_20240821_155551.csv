@@ -1,0 +1,12 @@
+Key,Value
+BPM,60.0000
+StartTime,0.0000
+Alpha,High
+alphaUser,0.1000
+alphaAuto,0.0030
+AudioGudance,1.0000
+VisualGudance,1.0000
+FinishTrial,1.0000
+Mean Onset List,13.1891,15.1505,16.3035
+Mean Interval List,0.0000,1.1342,1.0476
+Timestamps,1.3742,3.7963,4.6187,5.5648,6.6158,7.6320,8.6097,9.5640,10.5200,11.5393,12.5549,13.6297,14.5300,15.6246,16.4295

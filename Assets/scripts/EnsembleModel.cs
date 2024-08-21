@@ -106,6 +106,8 @@ public class EnsembleModel : MonoBehaviour
             ClearOnsetsAvailable();
             ++scoreCounter;
             scoreUI.UpdateScore(scoreCounter);
+            PlayerPrefs.SetInt("scoreCounter", scoreCounter);
+            PlayerPrefs.Save();
 #if UNITY_EDITOR
             // 更新 ScoreUIController 中的分数显示
             Debug.Log("scorecount" + scoreCounter);          
@@ -126,7 +128,6 @@ public class EnsembleModel : MonoBehaviour
         players.Clear();
         alphaParams.Clear();
         betaParams.Clear();
-        UserTimeManager.Instance.clearTimestamps();
         UserPlayer userPlayer = FindObjectOfType<UserPlayer>();
         if (userPlayer != null)
             userPlayer.Clearuserlist();

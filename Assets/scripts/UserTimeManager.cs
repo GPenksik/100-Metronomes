@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UserTimeManager : MonoBehaviour
 {
     // 单例实例
     public static UserTimeManager Instance { get; private set; }
+    public Text TimecountText;
+    public Text FollowText;
+
+    private int count = 10;
 
     // 存储时间戳的列表
     private List<float> Timestamps = new List<float>();
@@ -22,6 +27,11 @@ public class UserTimeManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (FollowText != null)
+        {
+            FollowText.enabled = false;
+        }
+        UpdateText(count);
     }
 
     // 添加时间戳的方法
@@ -62,10 +72,20 @@ public class UserTimeManager : MonoBehaviour
         }
     }
 
-    public bool GetFiveTimestamps()
+    public bool GetTenTimestamps()
     {
+        int count = 10 - Timestamps.Count;
+        TimecountText.text = count.ToString();
+        if (Timestamps.Count > 4 && FollowText != null)
+        {
+            FollowText.enabled = true;
+        }
+        if (Timestamps.Count > 9 && TimecountText != null)
+        {
+            TimecountText.enabled = false;
+        }
 
-        return (Timestamps.Count > 5); 
+        return (Timestamps.Count > 9); 
     }
 
     public float GetlastonsetInterval()
@@ -90,5 +110,14 @@ public class UserTimeManager : MonoBehaviour
     {
 
         Timestamps.Clear();
+        FollowText.enabled = false;
+        TimecountText.enabled = true;
+    }
+    private void UpdateText(int Count)
+    {
+        if (TimecountText != null)
+        {
+            TimecountText.text = Count.ToString();
+        }
     }
 }
