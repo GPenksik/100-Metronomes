@@ -118,6 +118,7 @@ public class EnsembleModel : MonoBehaviour
         // Find all Player objects in the scene and add them to the list
         Player[] foundPlayers = FindObjectsOfType<Player>();
         players.AddRange(foundPlayers);
+
     }
     public void ClearParam()
     {
@@ -125,13 +126,17 @@ public class EnsembleModel : MonoBehaviour
         players.Clear();
         alphaParams.Clear();
         betaParams.Clear();
+        UserTimeManager.Instance.clearTimestamps();
+        UserPlayer userPlayer = FindObjectOfType<UserPlayer>();
+        if (userPlayer != null)
+            userPlayer.Clearuserlist();
         scoreCounter = 0;
     }
 
     public void InitalParam()
     {
-        float alpha_user = PlayerPrefs.GetFloat("alphaUser", 0.03f);
-        float alpha_auto = PlayerPrefs.GetFloat("alphaAuto", 0.03f);
+        float alpha_user = PlayerPrefs.GetFloat("alphaUser", 0.1f);
+        float alpha_auto = PlayerPrefs.GetFloat("alphaAuto", 0.01f);
         // Initialize alphaParams and betaParams lists
         for (int i = 0; i < players.Count; i++)
         {

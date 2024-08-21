@@ -56,10 +56,6 @@ public class AutoPlayer : Player
         for (int i = 0; i < players.Count; ++i)
         {
             float async = GetLatestOnsetTime() - players[i].GetLatestOnsetTime();
-            if (async < -0.5 || async > 0.5)
-            { 
-                async = 0;
-            }
             alphaSum += alphas[i] * async;
             //Debug.Log("alphaSum: " + alphaSum);
             betaSum += betas[i] * async;

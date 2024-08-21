@@ -109,7 +109,7 @@ public class PauseAndConfirmMenu : MonoBehaviour
             {
                 if (PlayerPrefs.HasKey(key))
                 {
-                    if (key == "BPM" || key == "meanOnset" || key == "StartTime")
+                    if (key == "BPM" || key == "alphaUser" || key == "alphaAuto" || key == "StartTime")
                     {
                         float value = PlayerPrefs.GetFloat(key);
                         data.AppendLine($"{key},{value.ToString("F4")}");
@@ -206,7 +206,7 @@ public class PauseAndConfirmMenu : MonoBehaviour
 
     string[] PlayerPrefsKeys()
     {
-        return new string[] { "BPM", "StartTime" };
+        return new string[] { "BPM", "StartTime", "Alpha","alphaUser", "alphaAuto" };
     }
 
 }

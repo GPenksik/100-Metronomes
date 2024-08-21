@@ -58,7 +58,7 @@ public class UserTimeManager : MonoBehaviour
         else
         {
             Debug.LogWarning("No space key timestamps recorded yet");
-            return -1f;
+            return 0f;
         }
     }
 

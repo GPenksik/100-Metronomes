@@ -8,9 +8,9 @@ public class StartMenu : MonoBehaviour
 
     void Start()
     {
-        UserTimeManager.Instance.clearTimestamps();
         Time.timeScale = 1f; // ª÷∏¥”Œœ∑ ±º‰
-
+        UserTimeManager.Instance.clearTimestamps();
+        GuideManager.Instance.ReloadChildObject();
     }
     void Update()
     {

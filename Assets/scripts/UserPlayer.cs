@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UserPlayer : Player
@@ -76,5 +77,11 @@ public class UserPlayer : Player
     public List<float> GetMeanIntervalList()
     {
         return meanIntervalList;
+    }
+
+    public void Clearuserlist()
+    {
+        meanOnsetList.Clear();
+        meanIntervalList.Clear();
     }
 }

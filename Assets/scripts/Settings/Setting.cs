@@ -11,9 +11,15 @@ public class Setting : MonoBehaviour
     public Button buttonMedium;
     public Button buttonLow;
     public Button nextButton;
+    public Button noguidance;
+    public Button audioguidance;
+    public Button visualguidance;
+    public Button bothguidance;
 
     private Button selectedBpmButton;
     private Button selectedAlphaButton;
+    private Button selectedguidanceButton;
+
     private float bpm = 120f;
 
     void Start()
@@ -22,15 +28,20 @@ public class Setting : MonoBehaviour
         button60.onClick.AddListener(() => OnBpmButtonClicked(button60, 60f));
         button90.onClick.AddListener(() => OnBpmButtonClicked(button90, 90f));
         button120.onClick.AddListener(() => OnBpmButtonClicked(button120, 120f));
-        buttonHigh.onClick.AddListener(() => OnAlphaButtonClicked(buttonHigh, 0.1f, 0.03f));
-        buttonMedium.onClick.AddListener(() => OnAlphaButtonClicked(buttonMedium, 0.03f, 0.03f));
-        buttonLow.onClick.AddListener(() => OnAlphaButtonClicked(buttonLow, 0.01f, 0.03f));
+        buttonHigh.onClick.AddListener(() => OnAlphaButtonClicked(buttonHigh, 0.1f, 0.01f,"High"));
+        buttonMedium.onClick.AddListener(() => OnAlphaButtonClicked(buttonMedium, 0.02f, 0.025f,"Medium"));
+        buttonLow.onClick.AddListener(() => OnAlphaButtonClicked(buttonLow, 0.01f, 0.03f,"Low"));
+        noguidance.onClick.AddListener(() => OnguidanceButtonClicked(noguidance, 0, 0));
+        audioguidance.onClick.AddListener(() => OnguidanceButtonClicked(audioguidance, 1, 0));
+        visualguidance.onClick.AddListener(() => OnguidanceButtonClicked(visualguidance, 0, 1));
+        bothguidance.onClick.AddListener(() => OnguidanceButtonClicked(bothguidance, 1, 1));
 
         nextButton.onClick.AddListener(OnNextButtonClicked);
 
         // 默认选择 120 BPM 和 Medium Alpha 的按钮
-        OnBpmButtonClicked(button90, 90f);
-        OnAlphaButtonClicked(buttonMedium, 0.03f, 0.03f);
+        OnBpmButtonClicked(button60, 60f);
+        OnAlphaButtonClicked(buttonHigh, 0.1f, 0.01f, "High");
+        OnguidanceButtonClicked(bothguidance, 1, 1);
     }
 
     void OnBpmButtonClicked(Button button, float selectedBpm)
@@ -51,11 +62,12 @@ public class Setting : MonoBehaviour
         SetButtonSelectedAppearance(button);
     }
 
-    void OnAlphaButtonClicked(Button button, float alphaUser, float alphaAuto)
+    void OnAlphaButtonClicked(Button button, float alphaUser, float alphaAuto,string alpha)
     {
         // 将 Alpha 值存储在 PlayerPrefs 中，实时更新
         PlayerPrefs.SetFloat("alphaUser", alphaUser);
         PlayerPrefs.SetFloat("alphaAuto", alphaAuto);
+        PlayerPrefs.SetString("Alpha", alpha);
         PlayerPrefs.Save();
 
         // 更新按钮外观
@@ -65,6 +77,23 @@ public class Setting : MonoBehaviour
         }
 
         selectedAlphaButton = button;
+        SetButtonSelectedAppearance(button);
+    }
+
+    void OnguidanceButtonClicked(Button button, int audio, int visual)
+    {
+        // 将 Alpha 值存储在 PlayerPrefs 中，实时更新
+        PlayerPrefs.SetInt("AudioGudance", audio);
+        PlayerPrefs.SetInt("VisualGudance", visual);
+        PlayerPrefs.Save();
+
+        // 更新按钮外观
+        if (selectedguidanceButton != null)
+        {
+            ResetButtonAppearance(selectedguidanceButton);
+        }
+
+        selectedguidanceButton = button;
         SetButtonSelectedAppearance(button);
     }
 
