@@ -57,10 +57,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -158,6 +156,12 @@ ScriptsOnlyBuild:
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
     fullTypeName: PauseAndConfirmMenu
+    methodName: OnConfirmButtonClicked
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseAndConfirmMenu
+    methodName: OngiveupButtonClicked
+  - assembly: Assembly-CSharp
+    fullTypeName: PauseAndConfirmMenu
     methodName: Resume
   sceneClasses:
     Assets/Scenes/Ensemble.unity:
@@ -220,7 +224,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8604}
     - Class: 114
-      Script: {instanceID: 9380}
+      Script: {instanceID: 9382}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -355,9 +359,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 8550}
     - Class: 114
-      Script: {instanceID: 9348}
+      Script: {instanceID: 9350}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9678}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -442,7 +446,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9220}
     - Class: 114
-      Script: {instanceID: 115748}
+      Script: {instanceID: 9248}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1112,7 +1116,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerObject
   - hash:
       serializedVersion: 2
-      Hash: 4b0b168b332a87b53728278abf69d5f6
+      Hash: e9525e79178ac499cc0721792b6a7ede
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GuideSound
@@ -1520,7 +1524,7 @@ ScriptsOnlyBuild:
     className: UnityOnSubmitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 5417556b041f9c1682748ad5f94663fd
+      Hash: ae4a867bc64229be7f55bf1f2647920f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PauseAndConfirmMenu
@@ -1566,6 +1570,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UserManager
+  - hash:
+      serializedVersion: 2
+      Hash: f36554f52dea39ae7247597a80c75024
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioOnly
   - hash:
       serializedVersion: 2
       Hash: 9a174471d4db2c0c6d3ac47d2f818db1
@@ -1662,15 +1672,9 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: f36554f52dea39ae7247597a80c75024
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: AudioOnly
   platform: 19
   scenePathNames:
   - Assets/Scenes/Settings.unity
   - Assets/Scenes/StartMenu.unity
   - Assets/Scenes/Ensemble.unity
-  playerPath: D:/unity_project/demo2/Metronomes.exe
+  playerPath: D:/unity_project/100Metronomes/Metronomes.exe
