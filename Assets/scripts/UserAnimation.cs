@@ -7,6 +7,7 @@ public class UserAnimation : MonoBehaviour
     public AudioClip audioClips;
     private AudioSource audioSource;
     private Animator animator;
+    public float clickpitch = 2.0f;
     public bool IsReversed = false;
     private float originalDuration = 0.5f; //原始时长（秒）
     private float targetDuration; // 目标播放时长
@@ -16,6 +17,7 @@ public class UserAnimation : MonoBehaviour
         animator = GetComponent<Animator>();
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = audioClips;
+        audioSource.pitch = clickpitch;
         if (animator == null)
         {
             Debug.LogError("Animator component not found on" + gameObject.name);
@@ -33,16 +35,12 @@ public class UserAnimation : MonoBehaviour
     {
         if (InputChecker.IsTouchBegan())
         {
-            // 记录空格键按下的时间戳
+            PlayAudio();
             UserTimeManager.Instance.AddTimestamp(Time.time);
             SetAnimationSpeedsign();
             if (UserTimeManager.Instance.GetsatampNum() > 2)
             {
                 targetDuration = UserTimeManager.Instance.GetlastonsetInterval();
-                //time_error = targetDuration - originalDuration;
-                //time_error = targetDuration - originalDuration + time_error;
-                //targetDuration = time_error * Alpha + originalDuration;
-                //Debug.Log("target Duration: " + targetDuration);
                 UpdateAnimationSpeed();
             }
 
@@ -79,6 +77,14 @@ public class UserAnimation : MonoBehaviour
 
         // 使用淡入淡出的方式回到默认状态
         animator.SetTrigger("Reset");
+    }
+
+    public void PlayAudio()
+    {
+        if (audioSource != null && audioSource.clip != null && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 
 }

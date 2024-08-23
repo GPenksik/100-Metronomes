@@ -564,7 +564,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
-      Hash: c530bef7b96e23eff9abaaba63be1397
+      Hash: 3fd41f0305db617819612a36d797a1c3
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UserAnimation
@@ -618,7 +618,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerMessageBox
   - hash:
       serializedVersion: 2
-      Hash: 15a1872f59e73c83f52b48e7f617949c
+      Hash: d6809a6ac99ba30aae63a57a920c6fef
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: AnimationAudioPlayer
@@ -696,7 +696,7 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
-      Hash: cb877fa310a7072db9a5e134ed4a07be
+      Hash: e16d6ff3e04e7043b12328999160a4a8
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GuideManager
@@ -1296,7 +1296,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerHBox
   - hash:
       serializedVersion: 2
-      Hash: 79169058cfeda0fae467123d97e034e3
+      Hash: 8034e1f703907d7d86fc12cd58436114
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ScoreUI

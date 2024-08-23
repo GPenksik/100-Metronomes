@@ -557,7 +557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e181e7ca9c5adc4287ade21d39f2f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClips: {fileID: 0}
+  audioClips: {fileID: 8300000, guid: 212eb34b6ab5f794680d24fbf260c6b2, type: 3}
+  clickpitch: 1.5
   IsReversed: 0
 --- !u!95 &668873667
 Animator:
@@ -602,13 +603,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668873664}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c3f93690d6f9f549a48beeefac59e5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
   - {fileID: 8300000, guid: 212eb34b6ab5f794680d24fbf260c6b2, type: 3}
+  clickpitch: 2
 --- !u!1 &756909681
 GameObject:
   m_ObjectHideFlags: 0

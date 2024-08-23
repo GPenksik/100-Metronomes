@@ -110,7 +110,7 @@ public class EnsembleModel : MonoBehaviour
             PlayerPrefs.Save();
 #if UNITY_EDITOR
             // 更新 ScoreUIController 中的分数显示
-            Debug.Log("scorecount" + scoreCounter);          
+            //Debug.Log("scorecount" + scoreCounter);          
 #endif
         }
     }
@@ -136,8 +136,8 @@ public class EnsembleModel : MonoBehaviour
 
     public void InitalParam()
     {
-        float alpha_user = PlayerPrefs.GetFloat("alphaUser", 0.1f);
-        float alpha_auto = PlayerPrefs.GetFloat("alphaAuto", 0.01f);
+        float alpha_user = PlayerPrefs.GetFloat("alphaUser", 0.05f);
+        float alpha_auto = PlayerPrefs.GetFloat("alphaAuto", 0.007f);
         // Initialize alphaParams and betaParams lists
         for (int i = 0; i < players.Count; i++)
         {

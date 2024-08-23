@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimationAudioPlayer : MonoBehaviour
 {
     public AudioClip[] audioClips; // 包含多个音频片段的数组
+    public float clickpitch = 1.0f;
     private AudioSource audioSource;
     private Animator animator;
     private bool audioPlayed = true; // 确保音频只播放一次
@@ -14,6 +15,7 @@ public class AnimationAudioPlayer : MonoBehaviour
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         animator = GetComponent<Animator>();
+        audioSource.pitch = clickpitch;
 
         // 从数组中随机选择一个音频片段
         if (audioClips.Length > 0)
@@ -35,7 +37,7 @@ public class AnimationAudioPlayer : MonoBehaviour
         }
 
         // 在动画归一化时间达到0.8时播放音频
-        if (currentNormalizedTime >= 0.9f && !audioPlayed)
+        if (currentNormalizedTime >= 0.99f && !audioPlayed)
         {
             PlayAudio();
             audioPlayed = true; // 确保音频只播放一次

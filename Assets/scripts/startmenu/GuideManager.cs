@@ -7,10 +7,9 @@ public class GuideManager : MonoBehaviour
     public GameObject visualPrefab;  // 用于存储要加载的 Prefab
     public GameObject emptyObject;  // 用于存储要加载的空对象
 
-    public bool needvisual = false;  // 控制是否加载 visualPrefab
-    public bool needaudio = false;  // 控制是否加载 emptyObjectPrefab
+    public int needvisual;  // 控制是否加载 visualPrefab
+    public int needaudio;  // 控制是否加载 emptyObjectPrefab
 
-    private GameObject instantiatedObject;
 
     void Awake()
     {
@@ -31,7 +30,7 @@ public class GuideManager : MonoBehaviour
     }
 
 
-    void LoadChildObject()
+    void LoadChildObject(int visual)
     {
         if (visualPrefab != null)
         {
@@ -43,11 +42,11 @@ public class GuideManager : MonoBehaviour
         }
 
         // 根据 visual 和 audio 的值激活对应的对象
-        if (needvisual && visualPrefab != null)
+        if (visual == 1 && visualPrefab != null)
         {
             visualPrefab.SetActive(true);
         }
-        else if (!needvisual && needaudio && emptyObject != null)
+        else if (visual == 0 && emptyObject != null)
         {
             emptyObject.SetActive(true);
         }
@@ -62,15 +61,7 @@ public class GuideManager : MonoBehaviour
     // 你可以在 Inspector 中通过调用此函数手动重新加载对象
     public void ReloadChildObject()
     {
-        if (PlayerPrefs.GetInt("AudioGudance", 1) == 1){
-            needaudio = true;
-        }
-        else { needaudio = false; }
-
-        if (PlayerPrefs.GetInt("VisualGudance", 1) == 1) {
-            needvisual = true;
-        }
-        else { needvisual = false; }
-        LoadChildObject();
+        needvisual = PlayerPrefs.GetInt("VisualGudance", 1);
+        LoadChildObject(needvisual);
     }
 }

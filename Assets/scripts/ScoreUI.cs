@@ -6,10 +6,11 @@ using UnityEngine.UI;
 public class ScoreUI : MonoBehaviour
 {
     public Text scoreText; // 引用 Unity 的 Text 组件
+    public Text secondText; // 引用 Unity 的 Text 组件
     public Text BPMText;
     public Text AlphaText;
     public Text FinishText;
-
+    public float timecount = 0;
     private int scoreCounter = 0;
 
     private void Start()
@@ -30,6 +31,11 @@ public class ScoreUI : MonoBehaviour
             FinishText.enabled = false;
         }
     }
+    private void Update()
+    {
+        timecount =Time.time- PlayerPrefs.GetFloat("StartTime");
+        UpdateTimeText(timecount);
+    }
 
     public void UpdateScore(int newScore)
     {
@@ -46,6 +52,13 @@ public class ScoreUI : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = "Scorecount: " + Counter.ToString();
+        }
+    }
+    private void UpdateTimeText(float SecondCounter)
+    {
+        if (secondText != null)
+        {
+            secondText.text = "Time: " + SecondCounter.ToString("F0")+" s";
         }
     }
     public void UpdateBPMText(float bpm)

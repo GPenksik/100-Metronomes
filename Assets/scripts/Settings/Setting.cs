@@ -40,7 +40,7 @@ public class Setting : MonoBehaviour
 
         // 默认选择 120 BPM 和 Medium Alpha 的按钮
         OnBpmButtonClicked(button60, 60f);
-        OnAlphaButtonClicked(buttonHigh, 0.1f, 0.003f, "High");
+        OnAlphaButtonClicked(buttonMedium, 0.05f, 0.007f, "Medium");
         OnguidanceButtonClicked(bothguidance, 1, 1);
     }
 
