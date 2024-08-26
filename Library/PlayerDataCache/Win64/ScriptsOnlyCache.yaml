@@ -1296,7 +1296,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerHBox
   - hash:
       serializedVersion: 2
-      Hash: a6b1daa40e85f3bd2527d6785ba52ba6
+      Hash: 8034e1f703907d7d86fc12cd58436114
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ScoreUI
