@@ -425,6 +425,7 @@
 "Assets/scripts/AutoPlayer.cs"
 "Assets/scripts/EnsembleModel.cs"
 "Assets/scripts/InputChecker.cs"
+"Assets/scripts/MetronomeSpatialAudio.cs"
 "Assets/scripts/Player.cs"
 "Assets/scripts/PuaseMenu.cs"
 "Assets/scripts/RandomAnimation.cs"

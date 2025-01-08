@@ -2714,6 +2714,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6225816318827270275, guid: 615e340e91e6a5d419d0876c70fe11c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1902667457}
+    - targetCorrespondingSourceObject: {fileID: -6225816318827270275, guid: 615e340e91e6a5d419d0876c70fe11c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1902667459}
   m_SourcePrefab: {fileID: 100100000, guid: 615e340e91e6a5d419d0876c70fe11c5, type: 3}
 --- !u!1 &1902667450 stripped
 GameObject:
@@ -2769,6 +2772,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClips: {fileID: 8300000, guid: 212eb34b6ab5f794680d24fbf260c6b2, type: 3}
   UseAudio: 0
+--- !u!114 &1902667459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902667450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96af3ca346b328f46b004306ae8af49e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 30
+  minDistance: 0.5
+  baseVolume: 1
+  basePitch: 1
+  maxPitchIncrease: 0.3
+  volumeDropoff: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
