@@ -64,7 +64,8 @@ public class MetronomeSpatialAudio : MonoBehaviour
         float normalizedDistance = (distance - minDistance) / (maxDistance - minDistance);
 
         // Set volume directly from baseVolume
-        audioSource.volume = baseVolume;
+        float distanceVolume = Mathf.Lerp(1f, 0.1f, Mathf.Pow(normalizedDistance, volumeDropoff));
+        audioSource.volume = baseVolume * distanceVolume;
 
         float distancePitch = 1f + (normalizedDistance * maxPitchIncrease);
         audioSource.pitch = basePitch * distancePitch;

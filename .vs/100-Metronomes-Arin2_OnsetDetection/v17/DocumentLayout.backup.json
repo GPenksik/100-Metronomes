@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|d:\\unity projects\\100-metronomes-arin2_onsetdetection\\assets\\metronomespatialaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|solutionrelative:assets\\metronomespatialaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|d:\\unity projects\\100-metronomes-arin2_onsetdetection\\assets\\scripts\\metronomespatialaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\metronomespatialaudio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|d:\\unity projects\\100-metronomes-arin2_onsetdetection\\assets\\scripts\\audioinputdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|d:\\unity projects\\100-metronomes-arin2_onsetdetection\\assets\\scripts\\startmenu\\guidemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\startmenu\\guidemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\assets\\scripts\\audioinputdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DF772562-D0D5-642E-0BA7-1B6BF28612E3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audioinputdetector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -28,18 +32,31 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MetronomeSpatialAudio.cs",
-              "DocumentMoniker": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\Assets\\MetronomeSpatialAudio.cs",
-              "RelativeDocumentMoniker": "Assets\\MetronomeSpatialAudio.cs",
-              "ToolTip": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\Assets\\MetronomeSpatialAudio.cs",
-              "RelativeToolTip": "Assets\\MetronomeSpatialAudio.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAkwFIAAAABAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\Assets\\scripts\\MetronomeSpatialAudio.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\MetronomeSpatialAudio.cs",
+              "ToolTip": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\Assets\\scripts\\MetronomeSpatialAudio.cs",
+              "RelativeToolTip": "Assets\\scripts\\MetronomeSpatialAudio.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAuwEcAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T05:34:01.396Z",
+              "WhenOpened": "2025-01-09T13:46:39.852Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GuideManager.cs",
+              "DocumentMoniker": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\Assets\\scripts\\startmenu\\GuideManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\startmenu\\GuideManager.cs",
+              "ToolTip": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\Assets\\scripts\\startmenu\\GuideManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\startmenu\\GuideManager.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowEEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T12:37:42.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AudioInputDetector.cs",
               "DocumentMoniker": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\Assets\\scripts\\AudioInputDetector.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\AudioInputDetector.cs",
@@ -47,12 +64,11 @@
               "RelativeToolTip": "Assets\\scripts\\AudioInputDetector.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-08T02:14:01.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-08T02:14:01.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "InputChecker.cs",
               "DocumentMoniker": "D:\\Unity Projects\\100-Metronomes-Arin2_OnsetDetection\\Assets\\scripts\\InputChecker.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\InputChecker.cs",
