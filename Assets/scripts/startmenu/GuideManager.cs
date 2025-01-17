@@ -4,11 +4,11 @@ public class GuideManager : MonoBehaviour
 {
     public static GuideManager Instance { get; private set; }
 
-    public GameObject visualPrefab;  // 用于存储要加载的 Prefab
-    public GameObject emptyObject;  // 用于存储要加载的空对象
+    public GameObject visualPrefab;  //  Prefab
+    public GameObject emptyObject;  
 
-    public int needvisual;  // 控制是否加载 visualPrefab
-    public int needaudio;  // 控制是否加载 emptyObjectPrefab
+    public int needvisual;  //  visualPrefab
+    public int needaudio;  //  emptyObjectPrefab
 
 
     void Awake()
@@ -52,13 +52,13 @@ public class GuideManager : MonoBehaviour
         }
     }
 
-    // 在场景加载时调用，销毁该对象
+    
     public void DestroyOnSceneLoad()
     {
         Destroy(gameObject);
     }
 
-    // 你可以在 Inspector 中通过调用此函数手动重新加载对象
+    // Keeps the metronomes based on user settings to the Ensemble scene
     public void ReloadChildObject()
     {
         needvisual = PlayerPrefs.GetInt("VisualGudance", 1);
